@@ -106,4 +106,29 @@ public abstract class Student extends Person
         return String.format("%s（%s）- GPA: %.2f, 成績レベル: %s", 
                            name, getStudentType(), gpa, getGradeLevel());
     }
+
+    //Week6 レッスン4で追加
+    public String getDetailedInfo() {
+    StringBuilder info = new StringBuilder();
+    info.append("=== 学生詳細情報 ===\n");
+    info.append("学生ID: ").append(getId()).append("\n");
+    info.append("氏名: ").append(getName()).append("\n");
+    info.append("年齢: ").append(getAge()).append("歳\n");
+    info.append("メールアドレス: ").append(getEmail()).append("\n");
+    info.append("専攻: ").append(getMajor()).append("\n");
+    info.append("====================");
+    return info.toString();
+    }
+
+
+    public String getAgeCategory() {
+    if (getAge() < 20) {
+        return "10代";
+    } else if (getAge() < 25) {
+        return "20代前半";
+    } else if (getAge() < 30) {
+        return "20代後半";
+    } else {
+        return "30代以上";
+    }
 }
