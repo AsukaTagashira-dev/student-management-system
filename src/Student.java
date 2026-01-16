@@ -124,11 +124,41 @@ public abstract class Student extends Person
     public String getAgeCategory() {
     if (getAge() < 20) {
         return "10代";
-    } else if (getAge() < 25) {
+    } 
+    else if (getAge() < 25) {
         return "20代前半";
-    } else if (getAge() < 30) {
-        return "20代後半";
-    } else {
-        return "30代以上";
     }
-}}
+    else if (getAge() < 30) {
+        return "20代後半";
+    }
+    else {
+        return "30代以上";
+    }   
+    
+    }
+    
+    
+    /**
+     * 検索用の統合情報を取得
+     * Week 6レッスン4実践演習で追加：検索機能拡張用
+     */
+    public String getSearchableInfo() {
+        return String.format("%s %s %s %d", 
+                            getName(), getId(), getMajor(), getAge());
+    }
+
+    /**
+     * 指定されたキーワードが学生情報に含まれるかチェック
+     * Week 6レッスン4実践演習で追加：汎用検索用
+     */
+    public boolean containsKeyword(String keyword) {
+        if (keyword == null || keyword.trim().isEmpty()) {
+            return false;
+        }
+
+        String lowerKeyword = keyword.toLowerCase();
+        String searchableInfo = getSearchableInfo().toLowerCase();
+
+        return searchableInfo.contains(lowerKeyword);
+    }
+}
