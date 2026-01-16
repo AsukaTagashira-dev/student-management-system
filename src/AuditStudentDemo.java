@@ -3,7 +3,7 @@
 import java.time.LocalDate;
 
 // Week6追加
-public class AuditStudentTest {
+public class AuditStudentDemo {
 
     public static void main(String[] args) {
         System.out.println("=== AuditStudent（聴講生）テストプログラム ===");
