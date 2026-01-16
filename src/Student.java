@@ -131,4 +131,4 @@ public abstract class Student extends Person
     } else {
         return "30代以上";
     }
-}
+}}
