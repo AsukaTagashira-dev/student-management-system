@@ -43,4 +43,21 @@ public abstract class Person {
         System.out.println("Email: " + email);
         System.out.println(introduce());
     }
+    
+    
+    //Week6追加
+    public String getShortInfo() {
+        return String.format("%s(%d歳)", getName(), getAge());
+    }
+
+    /**
+     * メールドメインを取得
+     * Week 6レッスン4で追加：複合変更管理の実践用
+     */
+    public String getEmailDomain() {
+        if (getEmail() != null && getEmail().contains("@")) {
+            return getEmail().substring(getEmail().indexOf("@") + 1);
+        }
+        return "不明";
+    }
 }
